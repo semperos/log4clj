@@ -117,7 +117,7 @@
   ([logger opts]
      (let [{:keys [appenders level]
             :or {appenders [(default-console-appender)]
-                 level (level-legend :debug)}} opts]
+                 level :debug}} opts]
        (doseq [appender appenders]
            (add-appender logger appender))
        (set-level logger level))))
