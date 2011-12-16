@@ -88,6 +88,12 @@
          logger)
        nil)))
 
+(defn remove-appender
+  "Remove the given `appender` from the given `logger` instance. The `appender` parameter may be either a string or an actual instance of the appender. Defaults to root logger if none is specified."
+  ([appender] (remove-appender (root-logger) appender))
+  ([logger appender]
+     (.removeAppender logger appender)))
+
 
 ;; ## Convenience Defaults ##
 (defn default-console-appender
