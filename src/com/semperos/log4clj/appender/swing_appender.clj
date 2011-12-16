@@ -24,7 +24,7 @@
 
 (defn -append
   [_ event]
-  (let [target @target-component]
+  (let [target @target-component-obj]
     (if (nil? target)
       (throw (NoSuchFieldException. "No Swing component has been configured for this appender. Please use the `com.semperos.log4clj.appender.swing-appender/target-component!` function to designate an appropriate Swing component as the target for this appenders log data."))
       (.append target (.getMessage event)))))
